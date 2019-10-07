@@ -3,8 +3,8 @@ language: python
 
 python:
   - "3.7" #Versión estable
-  - "3.8"
-  - "3.9" #Versión de desarrollo
+
+
 
 
 before_install:
