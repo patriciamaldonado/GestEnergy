@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.com/patriciamaldonado/GestEnergy.svg?branch=master)](https://travis-ci.com/patriciamaldonado/GestEnergy)
 # GestEnergy (Gestión empresa Energia)
 
 ### Descripción
