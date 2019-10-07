@@ -10,9 +10,10 @@ python:
 before_install:
   - python --version
   - pip install -U pip
+  - pip install nose
 
 install:
   - pip install -r requirements.txt
 
 script:
-    - python ./src/tests.py
+    - cd src && nosetests tests.py
