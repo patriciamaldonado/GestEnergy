@@ -1,0 +1,10 @@
+[
+ {"nombre": "patri",
+ "apellido": "maldonado",
+"estado": "baja",
+"robinson": "si"},
+ {"nombre": "juan",
+ "apellido": "ortiz",
+ "estado": "alta",
+ "robinson": "si"}
+]
