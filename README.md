@@ -30,6 +30,15 @@ Se obtendrán datos sobre:
 
 - Para testear nuestra clase se usará [nosetest](https://nose.readthedocs.io/en/latest/).
 
+<<<<<<< 409ba858bb3c4b381dabbf47a49bc188ead080aa
 #Documentación
 
 - [Integración contínua]()
+=======
+- Travis CI para [integración contínua](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
+
+## Ejecución test
+ 1. Clonar respositorio.
+ 2. Instalar Python3
+ 3. Instalar nosetest
+ 4. Ejecutar make nosetest
