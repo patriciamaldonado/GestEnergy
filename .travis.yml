@@ -1,11 +1,7 @@
-
 language: python
 
 python:
   - "3.7" #Versión estable
-
-
-
 
 before_install:
   - python --version
@@ -15,5 +11,6 @@ before_install:
 install:
   - pip install -r requirements.txt
 
+
 script:
-    - cd src && nosetests tests.py
+    - make tests
