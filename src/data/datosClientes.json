@@ -1,10 +1,41 @@
 [
- {"nombre": "patri",
- "apellido": "maldonado",
-"estado": "baja",
-"robinson": "si"},
- {"nombre": "juan",
- "apellido": "ortiz",
- "estado": "alta",
- "robinson": "si"}
+   {
+      "Nombre": "Patricia",
+      "Apellidos": "Robles Santos",
+      "DNI": "77777777A",
+      "Telefono": "111111111",
+      "Direccion": "C/ Alamos n3",
+      "Provincia": "Granada",
+      "Estado": "baja",
+      "Energia": "electricidad",
+      "Potencia": 5.75,
+      "Cups": "ES3060826768692666ZW",
+      "Robinson": "si"
+   },
+   {
+      "Nombre": "Juan",
+      "Apellidos": "Ortega Blanco",
+      "DNI": "66666666B",
+      "Telefono": "222222222",
+      "Direccion": "C/ Girasoles n7",
+      "Provincia": "Almeria",
+      "Estado": "alta",
+      "Energia": "gas",
+      "Potencia": 3.1,
+      "Cups": "ES3060826768692666ZV",
+      "Robinson": "no"
+   },
+   {
+      "Nombre": "Alejandro",
+      "Apellidos": "Cano Rivas",
+      "DNI": "88888888C",
+      "Telefono": "333333333",
+      "Direccion": "C/ Baraca n10",
+      "Provincia": "Almeria",
+      "Estado": "baja",
+      "Energia": "electricidad",
+      "Potencia": 4.6,
+      "Cups": "ES3060826768692666ZR",
+      "Robinson": "no"
+   }
 ]
