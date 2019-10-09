@@ -2,6 +2,7 @@ language: python
 
 python:
   - "3.7" #Versión estable
+  - "3.7-dev" #Version de desarrollo
 
 before_install:
   - python --version
