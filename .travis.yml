@@ -1,6 +1,7 @@
 language: python
 
 python:
+  #Se han elegido esta versiones porque son recientes, no han llegado a su end-of-life y son de más uso.
   - "3.7" #Versión estable
   - "3.7-dev" #Version de desarrollo
 
