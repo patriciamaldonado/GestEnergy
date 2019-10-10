@@ -11,11 +11,12 @@ El fin de este proyecto es obtener búsquedas personalizadas a los trabajadores,
 
 ## Funcionalidades
 
-Se obtendrán datos sobre:
+Se obtendrán datos sobre búsqueda de clientes:
 
-- clientes que estén actualmente de baja.
-- clientes de una determinada ciudad.
-- un cliente en concreto filtrando por DNI.
+- Por estado: baja/alta.
+- Por provincia.
+- Un cliente en concreto filtrando por DNI.
+- ...
 
 
 ## Herramientas
@@ -26,7 +27,7 @@ Se obtendrán datos sobre:
 
 - Los datos se almacenarán en una base de datos NoSQL, **[MongoDB](https://www.mongodb.com/es)**
 
-- Uso de la biblioteca **[logging](https://docs.python.org/3/library/logging.html)**.
+- Para el registro de logs uso de logstash (ELK) con la biblioteca **[logging](https://docs.python.org/3/library/logging.html)**
 
 - Para testear nuestra clase se usará [nosetest](https://nose.readthedocs.io/en/latest/).
 
@@ -36,4 +37,4 @@ Se obtendrán datos sobre:
  1. Clonar respositorio.
  2. Instalar Python3
  3. Instalar nosetest
- 4. Ejecutar make nosetest
+ 4. Ejecutar make tests
