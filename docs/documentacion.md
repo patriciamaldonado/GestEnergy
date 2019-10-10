@@ -21,3 +21,14 @@ Para integración contínua se va a usar Travis CI,éste clona el repositorio a 
     - [Archivo de travis](https://github.com/patriciamaldonado/GestEnergy/blob/master/.travis.yml)
     - [Requirements](https://github.com/patriciamaldonado/GestEnergy/blob/master/requirements.txt)
     - [Makefile](https://github.com/patriciamaldonado/GestEnergy/blob/master/Makefile)
+
+### Configuración shippable para Python
+
+  Para configurar shippable tenemos que ingresar en la página [shippable](https://app.shippable.com) y permitir acceso a nuestra cuenta de Github.
+  Creamos un archivo llamado .shippable.yml en el que añadimos el lenguaje, versiones del lenguaje a probar y los comandos necesarios para la ejecución de test.
+
+  [Archivo de shippable](https://github.com/patriciamaldonado/GestEnergy/blob/master/.shippable.yml)
+
+ Podemos comprobar que los test se han ejecutado correctamente.
+   ![shi](shi.jpg)
+   ![build](builshi.png)
