@@ -11,30 +11,44 @@ El fin de este proyecto es obtener búsquedas personalizadas a los trabajadores,
 
 ## Funcionalidades
 
-Se obtendrán datos sobre búsqueda de clientes:
+Se podrán obtener datos de clientes realizando:
 
-- Por estado: baja/alta.
-- Por provincia.
-- Un cliente en concreto filtrando por DNI.
-- ...
+- Búsquedas por estado: baja/alta.
+- Búsquedas por provincia.
+- Búsqueda de un cliente en concreto filtrando por DNI.
+- Búsqueda por nombre.
+- Búsqueda para comprobar si se trata de un cliente Robinson.
+- Obtener listado completo de clientes.
+- Muestra de un listado con todos los clientes.
 
+## Ejecución de tests
 
-## Herramientas
-
-- Para desarrollarla voy a utilizar el lenguaje **[Python](https://wiki.archlinux.org/index.php/Python)** y el framework **[Flask](http://flask.palletsprojects.com/en/1.1.x/)**.
-
-- Como entorno virtual de python utilizaré **[Pipenv](https://pipenv-es.readthedocs.io/es/latest/)**.
-
-- Los datos se almacenarán en una base de datos NoSQL, **[MongoDB](https://www.mongodb.com/es)**
-
-- Para el registro de logs uso de logstash (ELK) con la biblioteca **[logging](https://docs.python.org/3/library/logging.html)**
-
-- Para testear nuestra clase se usará [nosetest](https://nose.readthedocs.io/en/latest/).
-
-- Travis CI para [integración contínua](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
-
-## Ejecución test
  1. Clonar respositorio.
+
+    > git clone  https://github.com/patriciamaldonado/GestEnergy.git
+
  2. Instalar Python3
+
+    > $ sudo apt install python3
+
  3. Instalar nosetest
- 4. Ejecutar make tests
+    > make install
+
+    Al ejecutar make install ya se encarga de instalar pip y nose. ( pip install -U pip,  pip install nose)
+
+
+4. Ejecutar tests
+   > make tests
+
+   Se sitúa en la carpeta contenedora del archivo de tests y lo ejecuta mediante nosetest.
+
+
+## Documentación
+Para documentación adicional vaya al siguiente enlace:
+ - [Documentación adicional](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
+
+Puede acceder a la sección deseada desde los siguientes enlaces:
+
+- Descrición de la clase
+- Herramientas de construcción y prueba
+- Integración continua
