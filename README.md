@@ -18,8 +18,8 @@ Se podrán obtener datos de clientes realizando:
 - Búsqueda de un cliente en concreto filtrando por DNI.
 - Búsqueda por nombre.
 - Búsqueda para comprobar si se trata de un cliente Robinson.
-- Obtener listado completo de clientes.
-- Muestra de un listado con todos los clientes.
+- Mostrar listado completo de clientes.
+
 
 ## Ejecución de tests
 
@@ -34,7 +34,7 @@ Se podrán obtener datos de clientes realizando:
  3. Instalar nosetest
     > make install
 
-    Al ejecutar make install ya se encarga de instalar pip y nose. ( pip install -U pip,  pip install nose)
+    Al ejecutar make install ya se encarga de instalar pip3 y nose. ( pip3 install -U pip,  pip3 install nose)
 
 
 4. Ejecutar tests
@@ -49,6 +49,5 @@ Para documentación adicional vaya al siguiente enlace:
 
 Puede acceder a la sección deseada desde los siguientes enlaces:
 
-- Descrición de la clase
-- Herramientas de construcción y prueba
-- Integración continua
+- [Descrición de la clase](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/doc_clase.md)
+- [Herramientas de construcción y prueba e Integración continua](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/CI_test.md)

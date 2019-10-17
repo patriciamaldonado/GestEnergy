@@ -51,7 +51,7 @@ Para integración continua se va a usar Travis CI,éste clona el repositorio a u
 ### Configuración shippable para Python
   Como CI extra se ha elegido shippable.
   Para configurar shippable tenemos que ingresar en la página [shippable](https://app.shippable.com) y permitir acceso a nuestra cuenta de Github.
-  Creamos un archivo llamado .shippable.yml en el que añadimos el lenguaje, versiones del lenguaje a probar y los comandos necesarios para la ejecución de test.
+  Creamos un archivo llamado .shippable.yml en el que añadimos el lenguaje, versiones del lenguaje a probar,instalación de dependecias y los comandos necesarios para la ejecución de test.
 
   [Archivo de shippable](https://github.com/patriciamaldonado/GestEnergy/blob/master/.shippable.yml)
 
