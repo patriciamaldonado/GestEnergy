@@ -5,6 +5,5 @@ python:
 
 build:
   ci:
-    - pip install nose
-    - pip install -r requirements.txt
+    - make install
     - make tests
