@@ -1,61 +1,14 @@
-# Proyecto IV - GestEnergy
-Documentación adicional del proyecto.
 
-## Índice
-* [Descripción del proyecto](#descripcion)
-* [Implementación](#implementacion)
-* [Descripción de la clase](#clase)
+
 * [Herramientas de construcción y prueba](#tests)
 * [Integración contínua](#CI)
   * [Travis CI](#travis)
   * [shippable](#shi)
 
 
-  <a name="descripcion"></a>
-## Descripción
-
-   Microservicio para la gestión clientes de una empresa de energia, en el que se podrán realizar búsquedas sobre datos de clientes.
-
-  El motivo por el que solo se pueden obtener datos y no modificarlos,borrarlos o añadirlos, es porque esta pensada para trabajadores que no tendrán estos privilegios. Simplemente se encargarán de llamar al cliente para ofrecer nuevas ofertas, comprobar sus datos, ofrecerles la mejor opcion a cada uno y que asi tengan un contrato hecho a medida y acorde a sus horarios y estilos de vida.
-
-  Todos los datos de clientes estarán almacenados en un archivo que contendrá: nombre, apellidos, dirección, estado(baja/alta), energía contratada (electricidad,gas), potencia, Cups, provincia,DNI, teléfono, dirección.
-
-
-  <a name="implementacion"></a>
-## Implementación
-
-  - Para desarrollarla voy a utilizar el lenguaje **[Python](https://wiki.archlinux.org/index.php/Python)** y el framework **[Flask](http://flask.palletsprojects.com/en/1.1.x/)**.
-
-  - Como entorno virtual de python utilizaré **[Pipenv](https://pipenv-es.readthedocs.io/es/latest/)**.
-
-  - Los datos se almacenarán en una base de datos NoSQL, **[MongoDB](https://www.mongodb.com/es)**
-
-  - Para el registro de logs uso de logstash (ELK) con la biblioteca **[logging](https://docs.python.org/3/library/logging.html)**
-
-  - Para testear nuestra clase se usará [nosetest](https://nose.readthedocs.io/en/latest/).
-
-  - Travis CI para [integración contínua](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
-
-  <a name="clase"></a>
-## Descripción de la clase
-
-
-Se va a testear la clase Clientes. Esta clase consta de métodos para la búsqueda de información sobre un cliente.
-
-
-- **mostrarClientes**: devuelve un listado con todos los clientes actuales.
-- **busquedaPorNombre**: busca clientes filtrando por nombre.
-- **busquedaPorDNI**: busca un cliente en concreto filtrando por DNI.
-- **busquedaPorProvincia**: busca clientes filtrando por provincia.
-- **busquedaPorEstado**: busca un cliente filtrando por estado(baja/alta). Útil para obtener por ejemplo todos los clientes de baja e ir llamándolos para convencerlos de que vuelvan a la compañia. O bien obtener los que estén de alta para llamarlos y mejorarles su tarifa.
-- **busquedaPorRobinson**: busca un cliente a través de su DNI para comprobar si se trata de un cliente Robinson, si se trata de un cliente Robinson te indica con un mensaje que a ese cliente no se le pueden ofrecer ofertas, en caso contrario muestra la información de ese cliente. Esto es útil cuando se quiere saber con rapidez si se puede llamar a un cliente.
-
-- [Enlace a la clase Clientes](https://github.com/patriciamaldonado/GestEnergy/blob/master/src/clientes.py)
-
-
   <a name="tests"></a>
 ## Herramientas de construcción y prueba
-Para testear la clase Clientes, se ha usado nosetest. [[1]](#nosetest)
+Para testear la clase Clientes, se ha usado nosetest.
 
 Ejecución de test:
 >  make test
@@ -82,10 +35,9 @@ Para integración continua se va a usar Travis CI,éste clona el repositorio a u
 
       - Podemos añadir comandos para que se ejecuten antes de la instalación (before_install).Instalar la útima versión de pip                  (pip install -U pip),comprobar versión en la que se está ejecutando con (python --version)                     
       - Con respecto a las versiones elegidas para probar nuestro código en python, no es recomendable usar inferiores a la 3.X   ya que la versión 2.7 no podrá utlizarse a partir de 2020. Por este motivo se probará en las versiones 3.X.
-      Se ha probado la versión 3.7  y la versión 3.7-dev, ya que estas versiones son recientes y no han llegado a su end-of-life.
+      Se ha probado la versión 3.7  y la versión 3.7-dev, ya que estsa versiones son recientes y no han llegado a su end-of-life.
       -  Las dependencias que necesitamos para nuestro proyecto se definen en en archivo requirements.txt, actualmente solo contiene la versión de flask que se podría usar. Se instalan mediante el comando make install  que se encarga de instalar:
-             (pip3 install nose,
-            -pip3 install -r requirements.txt)
+      (pip3 install nose, pip3 install -r requirements.txt)
       - Para la ejecución de los test se ha utlizado un Makefille que mediante la orden make tests, se situa en la carpeta contenedora del test y lo testea mediante nosetest.
 
 3. Una vez que tengamos configurado nuestro archivo .travis.yml correctamente, cada vez que hagamos git push se verificará si se pasan los test o fallan.
@@ -97,7 +49,7 @@ Para integración continua se va a usar Travis CI,éste clona el repositorio a u
 
 <a name="shi"></a>
 ### Configuración shippable para Python
-
+  Como CI extra se ha elegido shippable.
   Para configurar shippable tenemos que ingresar en la página [shippable](https://app.shippable.com) y permitir acceso a nuestra cuenta de Github.
   Creamos un archivo llamado .shippable.yml en el que añadimos el lenguaje, versiones del lenguaje a probar y los comandos necesarios para la ejecución de test.
 
