@@ -35,8 +35,8 @@ class testClientes(unittest.TestCase):
 
 
     def testRobinson(self):
-        self.assertEqual(self.c.busquedaPorRobinson("Patricia"),"No puede ofrecer ofertas a este cliente")
-        #self.assertEqual(self.c.busquedaPorRobinson("Alejandro"),"No puede ofrecer ofertas a este cliente")
+            self.assertEqual(self.c.busquedaPorRobinson("77777777A"),"No puede ofrecer ofertas a este cliente")
+            #self.assertEqual(self.c.busquedaPorRobinson("66666666B"),"No puede ofrecer ofertas a este cliente")
 
 
 if __name__ == '__main__':

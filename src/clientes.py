@@ -60,13 +60,10 @@ class Clientes:
                 return n
             return n
 
-    def busquedaPorRobinson(self,nombre):
+    def busquedaPorRobinson(self,DNI):
             n = []
-            if type(nombre) == int:
-                n = False
-                return n
             for i in self.clientes:
-                if i["Nombre"] == nombre:
+                if i["DNI"] == DNI:
                         if i["Robinson"] == "no":
                             n.append(i)
                             return n
