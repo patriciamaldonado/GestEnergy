@@ -1,8 +1,9 @@
 language: python
 
 python:
-  - "3.7"
-
+  #Se han elegido esta versiones porque son recientes, no han llegado a su end-of-life y son de más uso.	  - "3.7"
+  - "3.7" #Versión estable
+  - "3.7-dev" #Version de desarrollo
 
 before_install:
   - python3 --version
@@ -13,10 +14,13 @@ before_install:
   - pm2 -v
 
 install:
-  - make install
 
+  - make install
 
 script:
     - make start
     - make stop
+    - make restart
+    - make show
+    - make delete
     - make tests_api
