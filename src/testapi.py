@@ -11,11 +11,12 @@ class testClientes(unittest.TestCase):
         self.app = main.app.test_client()
 
     def test_principal(self):
-        #Comprobamos que la ruta devuelve el estado correcto
 
         response = self.app.get('/')
         data = json.loads(response.data.decode())
+        #Comprobamos que la ruta devuelve el estado correcto
         self.assertEqual(response.status_code, 200, "Codigo no esperado")
+        #comprobamos que se haya de vuelto el status = OK
         self.assertTrue(data['status'] == 'OK')
 
     def test_status(self):
@@ -29,7 +30,9 @@ class testClientes(unittest.TestCase):
     def test_mostrar(self):
 
         response = self.app.get('/mostrar')
+        # Se comprueba que el código de estado sea 200
         self.assertEqual(response.status_code, 200, "Codigo no esperado")
+        # Se comprueba que se devuelva contenido json
         self.assertTrue(response.content_type == 'application/json')
 
     def test_busquedaNombre(self):
