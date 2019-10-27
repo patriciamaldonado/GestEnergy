@@ -31,17 +31,24 @@ Se podrán obtener datos de clientes realizando:
 
     > $ sudo apt install python3
 
- 3. Instalar nosetest
+ 3. Instalar dependencias
     > make install
 
-    Al ejecutar make install ya se encarga de instalar pip3 y nose. ( pip3 install -U pip,  pip3 install nose)
-
-
-4. Ejecutar tests
+4. Ejecutar tests unitarios y de integración
    > make tests
+   > make testapi
 
    Se sitúa en la carpeta contenedora del archivo de tests y lo ejecuta mediante nosetest.
 
+## Ejecución de la API
+
+Una vez instaladas las dependencias se podrá iniciar la api con el siguiente comando:
+> > pm2 start 'gunicorn main:app -b 0000:5000 -w 2' --name "api"
+
+Se iniciará en el navegador mediante la URL http://0.0.0.0:5000/
+
+## Herramienta de construcción 
+> buildtool: Makefile
 
 ## Documentación
 Para documentación adicional vaya al siguiente enlace:
@@ -49,5 +56,7 @@ Para documentación adicional vaya al siguiente enlace:
 
 Puede acceder a la sección deseada desde los siguientes enlaces:
 
-- [Descrición de la clase](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/doc_clase.md)
+- [Descrición y funcionamiento de la api](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/api.md)
+
 - [Herramientas de construcción y prueba e Integración continua](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/CI_test.md)
+- [Descrición de la clase](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/doc_clase.md)
