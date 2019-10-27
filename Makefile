@@ -1,12 +1,16 @@
 
-install:
+install: #instalamos dependencias
 	pip3 install nose
+	npm install -g n
+	npm install -g pm2
+	node -v
+	pm2 -v
 	pip3 install -r requirements.txt
 
-tests:
+tests: # ejecutamos tests unitarios
 	cd src; nosetests tests.py
 
-tests_api:
+tests_api: #ejecutamos tests de integración para la api
 	cd src; nosetests testapi.py
 
 start: #inicio del servicio añadiendo un alias

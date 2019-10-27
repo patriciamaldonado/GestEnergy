@@ -8,10 +8,6 @@ python:
 before_install:
   - python3 --version
   - pip3 install -U pip
-  - npm install -g n
-  - npm install -g pm2
-  - node -v
-  - pm2 -v
 
 install:
 
