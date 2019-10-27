@@ -51,7 +51,10 @@ Sin olvidarnos de comprobar si la URL introducida es correcta (error 404), esto 
 <a name="CI"></a>
 ## Integración continua
 
-Para integración continua se va a usar Travis CI,éste clona el repositorio a un entorno virtual para construir y probar tu código. Es fundamental detectar todos los fallos para posteriormente desplegar una versión correcta.
+Para integración continua se va a usar Travis CI,éste clona el repositorio a un entorno virtual para construir y probar tu código. Además como CI adicional se usará Shippable.
+Es fundamental detectar todos los fallos para posteriormente desplegar una versión correcta.
+Con Travis se va a probar el servicio, iniciarlo, reiniciarlo, pararlo... además de ejecutar los test de integración y con Shippable se van a ejecutar los tests unitarios.
+
 
 <a name="travis"></a>
 ### Configuración Travis CI para Python
@@ -72,6 +75,8 @@ Para integración continua se va a usar Travis CI,éste clona el repositorio a u
     - [Archivo de travis](https://github.com/patriciamaldonado/GestEnergy/blob/master/.travis.yml)
     - [Requirements](https://github.com/patriciamaldonado/GestEnergy/blob/master/requirements.txt)
     - [Makefile](https://github.com/patriciamaldonado/GestEnergy/blob/master/Makefile)
+
+
 
 <a name="shi"></a>
 ### Configuración shippable para Python
