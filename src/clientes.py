@@ -1,5 +1,6 @@
+from flask import jsonify
 import json
-
+import os
 
 class Clientes:
 
@@ -8,7 +9,7 @@ class Clientes:
                 self.clientes = json.load(f)
 
     def mostrarClientes(self):
-        with open('datosClientes.json', 'r') as f:
+        with open('data/datosClientes.json', 'r') as f:
             listado = self.clientes = json.load(f)
         return listado
 
