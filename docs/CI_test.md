@@ -1,16 +1,23 @@
 
 
-* [Herramientas de construcción y prueba](#tests)
-* [Integración contínua](#CI)
+## Índice
+
+* Herramientas de construcción y prueba
+  * [Test unitarios](#tests)
+  * [Tests de integración](#testsapi)
+
+* Integración contínua
   * [Travis CI](#travis)
   * [shippable](#shi)
 
 
-  <a name="tests"></a>
+
 ## Herramientas de construcción y prueba
+  <a name="tests"></a>
+### Tests Unitarios
 Para testear la clase Clientes, se ha usado nosetest.
 
-Ejecución de test:
+Ejecución de tests unitarios:
 >  make test
 
 Se testean todos los métodos de la clase y además del método para comprobar si se ha inicializado bien.
@@ -20,7 +27,26 @@ Se testean todos los métodos de la clase y además del método para comprobar s
 - **testBusquedaPorEstado**: se comprueba que el estado que se haya introducido sea uno de los dos posibles (alta o baja), que no se introduzca un número, ni una búsqueda vacía.
 - **testRobinson**: testea cuando un cliente introducido sea robinson devuelva el mensaje "No puede ofrecer ofertas a este cliente"
 
-- [Enlace al archivo de test](https://github.com/patriciamaldonado/GestEnergy/blob/master/src/tests.py)
+- [Enlace al archivo de tests unitarios](https://github.com/patriciamaldonado/GestEnergy/blob/master/src/tests.py)
+
+  <a name="testsapi"></a>
+### Tests de integración
+Para los tests de integración se ha testeado la api.
+
+Ejecución de tests de integración:
+>  make tests_api
+- [Enlace al archivo de la api](https://github.com/patriciamaldonado/GestEnergy/blob/master/src/main.py)
+
+
+Es fundamental comprobar:
+ - que el estado que se ha devuelto sea el correcto (status = OK)
+ - el código sea 200
+ - y además que el contenido devuelto sea el correcto, en este caso que se devuelva contenido JSON.
+
+Sin olvidarnos de comprobar si la URL introducida es correcta (error 404), esto se ha controlado desde la misma api.
+
+- [Enlace al archivo de tests de integración ](https://github.com/patriciamaldonado/GestEnergy/blob/master/src/testapi.py)
+
 
 <a name="CI"></a>
 ## Integración continua
