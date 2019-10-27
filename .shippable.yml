@@ -1,8 +1,7 @@
-#Revisado
 language: python
 
 python:
-  - 3.7
+  - "3.7"
 
 build:
   ci:

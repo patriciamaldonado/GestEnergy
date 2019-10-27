@@ -1,19 +1,22 @@
-#Revisado
 language: python
 
 python:
-  #Se han elegido esta versiones porque son recientes, no han llegado a su end-of-life y son de más uso.
-  - "3.7" #Versión estable
-  - "3.7-dev" #Version de desarrollo
+  - "3.7"
+
 
 before_install:
   - python3 --version
   - pip3 install -U pip
-
+  - npm install -g n
+  - npm install -g pm2
+  - node -v
+  - pm2 -v
 
 install:
   - make install
 
 
 script:
-    - make tests
+    - make start
+    - make stop
+    - make tests_api
