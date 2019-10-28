@@ -19,11 +19,34 @@ A continuación se describen las diferentes rutas de la API.
 
 - [Enlace al archivo de la api](https://github.com/patriciamaldonado/GestEnergy/blob/master/src/main.py)
 
-## Ejecución de la api
+## Servicio
 
-Para ejecutar la api usamos el gestor de procesos pm2 con gunicorn.
+Se va a usar el gestor de procesos pm2 con gunicorn.
+
+#### Arrancar el servicio
+Para iniciar el servicio usamos pm2 start
 
 > pm2 start 'gunicorn main:app -b 0000:5000 -w 2' --name "api"
 
-En este ejemplo se ha iniciado la aplicación en la dirección y puerto 0000:5000 con 2 workers, además le establecemos un alias "api",
-que nos servirá posteriormente para parar la api, reiniciarla,etc...
+En este ejemplo se ha iniciado el servicio en la dirección y puerto 0000:5000 con 2 workers, además le establecemos un alias "api",que nos servirá posteriormente para parar la api, reiniciarla,etc... Aunque también podemos referirnos a ella mediante el id.
+
+#### Detener el servicio
+
+> pm2 stop api
+
+
+#### Reiniciar el servicio
+
+> pm2 restart api
+
+
+#### Eliminar el servicio
+
+> 	pm2 delete api
+
+Éste se elimina de la lista de procesos.
+
+
+#### Obtener más detalles sobre el servicio
+
+> pm2 show api
