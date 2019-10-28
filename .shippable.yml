@@ -7,3 +7,4 @@ build:
   ci:
     - make install
     - make tests
+    - make tests_api

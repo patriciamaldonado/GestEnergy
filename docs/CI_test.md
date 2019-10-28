@@ -53,7 +53,7 @@ Sin olvidarnos de comprobar si la URL introducida es correcta (error 404), esto 
 
 Para integración continua se va a usar Travis CI,éste clona el repositorio a un entorno virtual para construir y probar tu código. Además como CI adicional se usará Shippable.
 Es fundamental detectar todos los fallos para posteriormente desplegar una versión correcta.
-Con Travis se va a probar el servicio, iniciarlo, reiniciarlo, pararlo... además de ejecutar los test de integración y con Shippable se van a ejecutar los tests unitarios.
+Con Travis se va a probar el servicio, iniciarlo, reiniciarlo, pararlo... y con Shippable se van a ejecutar los tests unitarios y test de integración.
 
 
 <a name="travis"></a>
