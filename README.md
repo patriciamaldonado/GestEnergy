@@ -23,7 +23,7 @@ Se podrán obtener datos de clientes realizando:
 
 ## Ejecución de tests
 
- 1. Clonar respositorio.
+ 1. Clonar repositorio.
 
     > git clone  https://github.com/patriciamaldonado/GestEnergy.git
 
@@ -45,10 +45,10 @@ Se podrán obtener datos de clientes realizando:
 ## Iniciar el servicio
 
 Para el servicio se ha usado el gestor de procesos pm2 con gunicorn.
-Previamente tenemos que haber instalado nodejs (sudo apt install nodejs) y
+Previamente tenemos que haber instalado nodejs (sudo apt install nodejs),Python3 y
 ejecutar make install.
 
-Una vez instaladas las dependencias se podrá iniciar la api con el siguiente comando:
+Una vez instaladas las dependencias y clonado el repsositorio se podrá iniciar el servicio con el siguiente comando:
 >  pm2 start 'gunicorn main:app -b 0000:5000 -w 2' --name "api"
 
 Se iniciará en el navegador mediante la URL http://0.0.0.0:5000/
