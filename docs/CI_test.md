@@ -40,7 +40,7 @@ Ejecución de tests de integración:
 
 Es fundamental comprobar:
  - que el estado que se ha devuelto sea el correcto (status = OK)
- - el código sea 200
+ - el código devuelto sea 200
  - y además que el contenido devuelto sea el correcto, en este caso que se devuelva contenido JSON.
 
 Sin olvidarnos de comprobar si la URL introducida es correcta (error 404), esto se ha controlado desde la misma api.
@@ -65,11 +65,17 @@ Con Travis se va a probar el servicio, iniciarlo, reiniciarlo, pararlo... y con 
       - Podemos añadir comandos para que se ejecuten antes de la instalación (before_install).Instalar la útima versión de pip                  (pip install -U pip),comprobar versión en la que se está ejecutando con (python --version)                     
       - Con respecto a las versiones elegidas para probar nuestro código en python, no es recomendable usar inferiores a la 3.X   ya que la versión 2.7 no podrá utlizarse a partir de 2020. Por este motivo se probará en las versiones 3.X.
       Se ha probado la versión 3.7  y la versión 3.7-dev, ya que estsa versiones son recientes y no han llegado a su end-of-life.
-      -  Las dependencias que necesitamos para nuestro proyecto se definen en en archivo requirements.txt, actualmente solo contiene la versión de flask que se podría usar. Se instalan mediante el comando make install  que se encarga de instalar:
-      (pip3 install nose, pip3 install -r requirements.txt)
-      - Para la ejecución de los test se ha utlizado un Makefille que mediante la orden make tests, se situa en la carpeta contenedora del test y lo testea mediante nosetest.
+      -  Las dependencias que necesitamos para nuestro proyecto se definen en en archivo requirements.txt, actualmente solo contiene la versión de flask y versión de gunicorn.
+      - La herramienta de construcción utlizada es Makefile con la que podremos instalar lo necesario ejecutando el comando make install.
+      - Además Travis se encargará de iniciar el servicio, pararlo, reiniciarlo..etc.
+          - make start
+          - make stop
+          - make restart
+          - make show
+          - make delete
 
-3. Una vez que tengamos configurado nuestro archivo .travis.yml correctamente, cada vez que hagamos git push se verificará si se pasan los test o fallan.
+
+3. Una vez que tengamos configurado nuestro archivo .travis.yml correctamente, cada vez que hagamos git push se verificará si ha ido todo correctamente.
 
 
     - [Archivo de travis](https://github.com/patriciamaldonado/GestEnergy/blob/master/.travis.yml)
@@ -83,9 +89,10 @@ Con Travis se va a probar el servicio, iniciarlo, reiniciarlo, pararlo... y con 
   Como CI extra se ha elegido shippable.
   Para configurar shippable tenemos que ingresar en la página [shippable](https://app.shippable.com) y permitir acceso a nuestra cuenta de Github.
   Creamos un archivo llamado .shippable.yml en el que añadimos el lenguaje, versiones del lenguaje a probar,instalación de dependecias y los comandos necesarios para la ejecución de test.
+  - Para la ejecución de los tests ejecutamos make tests y make testapi se situa en la carpeta contenedora del test y lo testea mediante nosetest.
 
   [Archivo de shippable](https://github.com/patriciamaldonado/GestEnergy/blob/master/.shippable.yml)
 
  Podemos comprobar que los test se han ejecutado correctamente.
    ![shi](shi.jpg)
-   ![build](builshi.png)
+   ![build](buildshi.png)
