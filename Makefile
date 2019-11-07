@@ -14,7 +14,7 @@ tests_api: #ejecutamos tests de integración para la api
 	cd src; nosetests testapi.py
 
 start-heroku: #para el despliegue en heroku
-	cd src; gunicorn main:app -b 0.0.0.0:$(PORT) 
+	cd src; gunicorn main:app -b 0000:$(PORT) 
 
 start: #inicio del servicio añadiendo un alias
 	pm2 start 'gunicorn main:app -b 0000:5000 -w 2' --name "api"
