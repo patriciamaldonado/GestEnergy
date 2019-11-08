@@ -3,16 +3,18 @@ from flask import Flask,jsonify,request
 import logging
 import json
 from clientes import Clientes
+import os
 
 app = Flask(__name__)
 
+import os
 
 
 c = Clientes()
 
 @app.route('/',methods=['GET'])
 def principal():
-    #app.logger.debug('Arranque de la aplicacion')
+#    app.logger.debug('Arranque de la aplicacion')
     status = {"status": "OK"}
     return json.dumps(status)
 
@@ -21,6 +23,7 @@ def principal():
 def page_not_found(e):
     #return 'URL incorrecta', 404
     return jsonify(error=str(e)), 404
+
 @app.route('/status',methods=['GET'])
 def status():
     status = {"status": "OK"}
@@ -67,7 +70,10 @@ def busquedaporDNI(DNI):
     return jsonify(clientes)
 
 
-##if __name__ == '__main__':
+if __name__ == '__main__':
     #LOG_FILENAME = '/home/patri/Escritorio/errores.log'
     #logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
-    ##app.run(host='0.0.0.0')
+   # app.run(host='0.0.0.0')
+   port = int(os.environ.get("PORT", 5000))
+
+   app.run(host='0.0.0.0', port=port)
