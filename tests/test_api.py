@@ -1,7 +1,7 @@
 
 # -*- coding: utf-8 -*-
 import unittest, json
-import main
+from src import main
 
 
 
@@ -60,3 +60,6 @@ class testClientes(unittest.TestCase):
         response = self.app.get('/robinson/<DNI>')
         self.assertEqual(response.status_code, 200, "Codigo no esperado")
         self.assertTrue(response.content_type == 'application/json')
+
+if __name__ == "__main__":
+    unittest.main()

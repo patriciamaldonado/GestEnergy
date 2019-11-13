@@ -1,3 +1,4 @@
+.PHONY: install tests tests_api start-heroku start stop restart delete show
 
 install: #instalamos dependencias
 	pip3 install nose
@@ -8,16 +9,16 @@ install: #instalamos dependencias
 	pip3 install -r requirements.txt
 
 tests: # ejecutamos tests unitarios
-	cd src; nosetests tests.py
+	nosetests tests/test_clientes.py -v
 
 tests_api: #ejecutamos tests de integración para la api
-	cd src; nosetests testapi.py
+	nosetests tests/test_api.py -v
 
 start-heroku: #para el despliegue en heroku
-	cd src; gunicorn main:app -b 0000:$(PORT)
+	gunicorn src.main:app -b 0000:$(PORT)
 
 start: #inicio del servicio añadiendo un alias
-	pm2 start 'gunicorn main:app -b 0000:5000 -w 2' --name "api"
+	pm2 start 'gunicorn src.main:app -b 0000:5000 -w 2' --name "api"
 
 stop: # paramos el servicio
 	pm2 stop api

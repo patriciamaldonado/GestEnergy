@@ -2,7 +2,7 @@
 from flask import Flask,jsonify,request
 import logging
 import json
-from clientes import Clientes
+from .clientes import Clientes
 import os
 
 app = Flask(__name__)

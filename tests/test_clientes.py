@@ -1,5 +1,5 @@
 import unittest
-from clientes import Clientes
+from src import Clientes
 
 class testClientes(unittest.TestCase):
 

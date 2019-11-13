@@ -5,12 +5,11 @@ import os
 class Clientes:
 
     def __init__(self):
-        with open('data/datosClientes.json', 'r') as f:
+        with open('src/data/datosClientes.json', 'r') as f:
                 self.clientes = json.load(f)
 
     def mostrarClientes(self):
-        with open('data/datosClientes.json', 'r') as f:
-            listado = self.clientes = json.load(f)
+        listado = self.clientes
         return listado
 
     def busquedaPorNombre(self,nombre):
