@@ -1,5 +1,5 @@
 .PHONY: install tests tests_api start-heroku start stop restart delete show
-
+#revisado
 install: #instalamos dependencias
 	pip3 install nose
 	npm install -g n
