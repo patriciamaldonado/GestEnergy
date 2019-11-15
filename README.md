@@ -57,12 +57,15 @@ Se iniciará en el navegador mediante la URL http://0.0.0.0:5000/
 ## Herramienta de construcción
 > buildtool: Makefile
 
+## Despliegue en un PaaS (Heroku)
+> Despliegue: https://gest-energy.herokuapp.com/
+
 ## Documentación
 Para documentación adicional vaya al siguiente enlace:
  - [Documentación adicional](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
 
 Puede acceder a la sección deseada desde los siguientes enlaces:
-
+- [Despliegue en un PaaS (heroku)](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/despliegue_pass.md)
 - [Descripción y funcionamiento de la api](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/api.md)
 
 - [Herramientas de construcción y prueba e Integración continua](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/CI_test.md)
