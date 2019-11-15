@@ -69,7 +69,7 @@ def busquedaporDNI(DNI):
 
     return jsonify(clientes)
 
-
+#revisado
 if __name__ == '__main__':
     #LOG_FILENAME = '/home/patri/Escritorio/errores.log'
     #logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
