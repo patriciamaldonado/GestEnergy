@@ -65,7 +65,7 @@ Para documentación adicional vaya al siguiente enlace:
  - [Documentación adicional](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
 
 Puede acceder a la sección deseada desde los siguientes enlaces:
-- [Despliegue en un PaaS (heroku)](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/despliegue_pass.md)
+- [Despliegue en un PaaS (heroku)](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/despliegue_paas.md)
 - [Descripción y funcionamiento de la api](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/api.md)
 
 - [Herramientas de construcción y prueba e Integración continua](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/CI_test.md)
