@@ -1,6 +1,6 @@
 # Despliegue  en un PaaS
 
-* #### **Despliegue en heroku**
+* #### **Despliegue en Heroku**
     * [Creación Procfile](#procfile)
     * [Alta en Heroku y despliegue](#altaHeroku)
     * [Despliegue atomático Github](#des_github)
@@ -11,7 +11,7 @@ Como método de despliegue principal en un PaaS se ha elegido Heroku.
 
 <a name="procfile"></a>
 ### Creación Procfile
-Para el despliegue en heroku, tenemos que crear un archivo llamado **Procfile** en la raíz
+Para el despliegue en Heroku, tenemos que crear un archivo llamado **Procfile** en la raíz
 de nuestro repositorio. En este archivo incluimos los comandos para iniciar nuestra aplicación,en este caso le pasamos:
 > web: make start-heroku.
 
@@ -31,7 +31,7 @@ Significa que vamos a desplegar una aplicación web con la herramienta de constr
 
   > sudo snap install heroku --classic
 
-**3. Login en heroku**
+**3. Login en Heroku**
 
   > heroku login
 
@@ -68,7 +68,7 @@ En caso de error, podemos ejecutar el comando [**heroku logs**](https://devcente
 - **/status**
 > https://gest-energy.herokuapp.com/status
 
-    ![herokuConfig](images/status.png)
+   ![herokuConfig](images/status.png)
 
 - **/mostrar**
 > https://gest-energy.herokuapp.com/mostrar
@@ -78,12 +78,12 @@ En caso de error, podemos ejecutar el comando [**heroku logs**](https://devcente
 - **/estado/alta**
 > https://gest-energy.herokuapp.com/estado/alta
 
-    ![herokuConfig](images/alta.png)
+   ![herokuConfig](images/alta.png)
 
 - **/provincia/Granada**
 > https://gest-energy.herokuapp.com/provincia/Granada
 
-    ![herokuConfig](images/provincia.png)
+   ![herokuConfig](images/provincia.png)
 
 
 - **/robinson/88888888C**
