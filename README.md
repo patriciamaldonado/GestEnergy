@@ -56,7 +56,7 @@ Se iniciará en el navegador mediante la URL http://0.0.0.0:5000/
 
 ## Herramienta de construcción
 > buildtool: Makefile
-
+//Revisado
 ## Despliegue en un PaaS (Heroku)
 > Despliegue: https://gest-energy.herokuapp.com/
 
