@@ -15,8 +15,7 @@ c = Clientes()
 @app.route('/',methods=['GET'])
 def principal():
 #    app.logger.debug('Arranque de la aplicacion')
-    status = {"status": "OK"}
-    return json.dumps(status)
+    return jsonify(status="OK")
 
 #Gestionamos el error 404, para cuando se introduzca una URL incorrecta
 @app.errorhandler(404)
@@ -26,8 +25,7 @@ def page_not_found(e):
 
 @app.route('/status',methods=['GET'])
 def status():
-    status = {"status": "OK"}
-    return json.dumps(status)
+    return jsonify(status="OK")
 
 @app.route('/mostrar',methods=['GET'])
 def mostrar():

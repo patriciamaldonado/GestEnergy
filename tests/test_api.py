@@ -13,18 +13,16 @@ class testClientes(unittest.TestCase):
     def test_principal(self):
 
         response = self.app.get('/')
-        data = json.loads(response.data.decode())
         #Comprobamos que la ruta devuelve el estado correcto
         self.assertEqual(response.status_code, 200, "Codigo no esperado")
-        #comprobamos que se haya de vuelto el status = OK
-        self.assertTrue(data['status'] == 'OK')
+        self.assertTrue(response.content_type == 'application/json')
+
 
     def test_status(self):
 
         response = self.app.get('/status')
-        data = json.loads(response.data.decode())
         self.assertEqual(response.status_code, 200, "Codigo no esperado")
-        self.assertTrue(data['status'] == 'OK')
+        self.assertTrue(response.content_type == 'application/json')
 
 
     def test_mostrar(self):
