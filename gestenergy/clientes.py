@@ -5,7 +5,7 @@ import os
 class Clientes:
 
     def __init__(self):
-        with open('src/data/datosClientes.json', 'r') as f:
+        with open('gestenergy/data/datosClientes.json', 'r') as f:
                 self.clientes = json.load(f)
 
     def mostrarClientes(self):

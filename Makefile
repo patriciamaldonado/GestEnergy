@@ -1,5 +1,5 @@
 .PHONY: install tests tests_api start-heroku start stop restart delete show
-#revisado
+
 install: #instalamos dependencias
 	pip3 install nose
 	npm install -g n
@@ -15,10 +15,10 @@ tests_api: #ejecutamos tests de integración para la api
 	nosetests tests/test_api.py -v
 
 start-heroku: #para el despliegue en heroku
-	gunicorn src.main:app -b 0000:$(PORT)
+	gunicorn gestenergy.app:app -b 0000:$(PORT)
 
 start: #inicio del servicio añadiendo un alias
-	pm2 start 'gunicorn src.main:app -b 0000:5000 -w 2' --name "api"
+	pm2 start 'gunicorn gestenergy.ge_app:app -b 0000:5000 -w 2' --name "api"
 
 stop: # paramos el servicio
 	pm2 stop api

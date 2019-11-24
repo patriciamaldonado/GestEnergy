@@ -1,2 +1,2 @@
 from .clientes import Clientes
-from . import main
+from . import ge_app

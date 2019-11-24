@@ -1,14 +1,14 @@
 
 # -*- coding: utf-8 -*-
 import unittest, json
-from src import main
+from gestenergy import ge_app
 
 
 
 class testClientes(unittest.TestCase):
     def setUp(self):
-        main.app.testing = True
-        self.app = main.app.test_client()
+        ge_app.app.testing = True
+        self.app = ge_app.app.test_client()
 
     def test_principal(self):
 

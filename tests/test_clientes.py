@@ -1,5 +1,5 @@
 import unittest
-from src import Clientes
+from gestenergy import Clientes
 
 class testClientes(unittest.TestCase):
 
