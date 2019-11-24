@@ -3,7 +3,7 @@ import json
 import os
 
 class Clientes:
-
+#revisado
     def __init__(self):
         with open('gestenergy/data/datosClientes.json', 'r') as f:
                 self.clientes = json.load(f)

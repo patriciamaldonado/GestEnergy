@@ -4,7 +4,7 @@ import logging
 import json
 from .clientes import Clientes
 import os
-
+#revisado
 app = Flask(__name__)
 
 import os

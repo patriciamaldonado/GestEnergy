@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import unittest, json
 from gestenergy import ge_app
-
+#revisado
 
 
 class testClientes(unittest.TestCase):
