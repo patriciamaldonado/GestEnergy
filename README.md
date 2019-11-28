@@ -45,7 +45,7 @@ Se podrán obtener datos de clientes realizando:
 ## Iniciar el servicio
 
 Para el servicio se ha usado el gestor de procesos pm2 con gunicorn.
-Previamente tenemos que haber instalado nodejs (sudo apt install nodejs),Python3 y
+Previamente tenemos que haber instalado nodejs (sudo apt install nodejs), Python3 y
 ejecutar make install.
 
 Una vez instaladas las dependencias y clonado el repsositorio se podrá iniciar el servicio con el siguiente comando:
@@ -58,6 +58,7 @@ Se iniciará en el navegador mediante la URL http://0.0.0.0:5000/
 > buildtool: Makefile
 
 ## Despliegue en un PaaS
+
 > Despliegue: https://gest-energy.herokuapp.com/
 
 ## Despliegue Contenedor (Docker)
@@ -65,6 +66,10 @@ Se iniciará en el navegador mediante la URL http://0.0.0.0:5000/
 Contenedor: https://gestenergy-docker.herokuapp.com/
 
 Contenedor: https://gestenergy.azurewebsites.net/
+
+# Dockerhub
+
+Dockerhub: https://hub.docker.com/r/pmaldonado/gestenergy
 
 ## Documentación
 Para documentación adicional vaya al siguiente enlace:
