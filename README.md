@@ -56,15 +56,23 @@ Se iniciará en el navegador mediante la URL http://0.0.0.0:5000/
 
 ## Herramienta de construcción
 > buildtool: Makefile
-//Revisado
-## Despliegue en un PaaS (Heroku)
+
+## Despliegue en un PaaS 
 > Despliegue: https://gest-energy.herokuapp.com/
+
+## Despliegue Contenedor (Docker)
+
+Contenedor: https://gestenergy-docker.herokuapp.com/
+Contenedor: https://gestenergy.azurewebsites.net/
 
 ## Documentación
 Para documentación adicional vaya al siguiente enlace:
  - [Documentación adicional](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
 
 Puede acceder a la sección deseada desde los siguientes enlaces:
+
+- [Despliegue Contenedor (Docker)](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/Docker.md)
+
 - [Despliegue en un PaaS (heroku)](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/despliegue_paas.md)
 - [Descripción y funcionamiento de la api](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/api.md)
 
