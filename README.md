@@ -57,12 +57,13 @@ Se iniciará en el navegador mediante la URL http://0.0.0.0:5000/
 ## Herramienta de construcción
 > buildtool: Makefile
 
-## Despliegue en un PaaS 
+## Despliegue en un PaaS
 > Despliegue: https://gest-energy.herokuapp.com/
 
 ## Despliegue Contenedor (Docker)
 
 Contenedor: https://gestenergy-docker.herokuapp.com/
+
 Contenedor: https://gestenergy.azurewebsites.net/
 
 ## Documentación
