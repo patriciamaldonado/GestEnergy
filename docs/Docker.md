@@ -1,5 +1,5 @@
 # Despliegue en un Contenedor (Docker)
-Con Docker podemos crear contenedores para que nuestra aplicación se pueda ejecutar en cualquier máquina indiependientemente del sistema operativo.
+Con Docker podemos crear contenedores para que nuestra aplicación se pueda ejecutar en cualquier máquina independientemente del sistema operativo.
 
    * [Dockerfile](#Dockerfile)
    * [Dockerhub](#Dockerhub)
@@ -85,7 +85,7 @@ Con Docker podemos crear contenedores para que nuestra aplicación se pueda ejec
 
 ### Prueba en local
 
-Ya tenemos el archivo Dockefile vamos a probarlo en local.
+Ya tenemos el archivo Dockefile, vamos a probarlo en local. [[9]](#noroot) [[10]](#pruebalocal)
 
   - **Construimos nuestra imagen Docker**
     ```
@@ -100,13 +100,13 @@ Ya tenemos el archivo Dockefile vamos a probarlo en local.
 
   - **Ejecutamos el contendor pasándole el puerto.**
     Se ejecutará en localhost con el puerto 5000.
-    (Para la prueba en local en el comando CMD he cambiado $PORT por el puerto 5000)
+    (Para la prueba en local, en el comando CMD he cambiado $PORT por el puerto 5000)
      ```
     docker run -p 5000:5000 gestenergy
      ```
       ![APPservices](images/pruebalocal.png)
 
-     Y comprobamos desde la URL http://0.0.0.0:5000/ que funciona correctamente.
+     Y comprobamos desde la URL http://0.0.0.0:5000/ que funciona correctamente, además mediante el comando ```docker ps``` vemos que está en ejecución.
 
 <a name="Dockerhub"></a>
 
@@ -118,7 +118,7 @@ Para subir nuestra imagen Docker a Dockerhub:
 
 **1. Creamos una cuenta en [Dockerhub](https://hub.docker.com/)**
 
-**2. Creamos un repositorio que linkearemos con nuestro repositorio de Github. [[8]](#dockerhub) **
+**2. Creamos un repositorio que linkearemos con nuestro repositorio de Github. [[8]](#dockerhub)**
  Si lo creamos mediante create and build automáticamente cogerá nuestro Dockerfile del repositorio y subirá la imagen.
 
    ![dockerhub](images/ok.png)
@@ -160,7 +160,7 @@ Descargamos la imagen con el siguiente comando:
   docker tag pmaldonado/gestenergy registry.heroku.com/gestenergy-docker/web
 
   ```
-  Y la subimos al registro de heroku[[5]](#dockerheroku).
+  **5. Y por último la subimos al registro de heroku[[5]](#dockerheroku).**
 
   ```
   docker push registry.heroku.com/<app>/<process-type>
@@ -181,9 +181,9 @@ En la siguiente URL se encuentra nuestra aplicación desplegada:
 
 ## Heroku.yml
 
-  Otra opción es crear un archivo llamado Heroku.yml para automatizar el proceso de creación del contenedor, para ello crearemos un archivo llamado Heroku.yml [[7]](#herokuyml) en la raíz de nuestro repositorio.
+  Otra opción es crear un archivo llamado Heroku.yml para automatizar el proceso de creación del contenedor, para ello crearemos un archivo llamado Heroku.yml [[7]](#herokuyml2) en la raíz de nuestro repositorio.
 
-  - **Éste ejecutará el comando CMD de nuestro Dockerfile.**
+  - **Éste ejecutará el comando CMD de nuestro Dockerfile.**  ```CMD gunicorn gestenergy.ge_app:app -b 0.0.0.0:${PORT}```
 
       ```
         build:
@@ -247,10 +247,14 @@ En la siguiente URL se encuentra nuestra aplicación desplegada:
 
 - <a name="imagenligera">[[4] Imagen ligera Dockerfile](https://pythonspeed.com/articles/base-image-python-docker-images/)
 
- - <a name="dockerheroku"> [[5]Docker Heroku](https://devcenter.heroku.com/articles/container-registry-and-runtime#cli)</a>
+ - <a name="dockerheroku"> [[5] Docker Heroku](https://devcenter.heroku.com/articles/container-registry-and-runtime#cli)</a>
 
  - <a name="puertoheroku"> [[6] Puerto Heroku](https://stackoverflow.com/questions/42162833/how-can-i-expose-the-dynamic-port-from-heroku-in-a-dockerfile)</a>
 
- - <a name="herokuyml"> [[7] Heroku.yml](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml)</a>
+ - <a name="herokuyml2"> [[7] Heroku.yml](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml)</a>
 
  - <a name="dockerhub"> [[8] Docker Hub](https://docs.docker.com/docker-hub/)</a>
+
+ - <a name="noroot"> [[9] Docker como usuario no root](https://docs.docker.com/install/linux/linux-postinstall/)</a>
+
+ - <a name="dockerlocal"> [[10] Docker instalacion y primeros pasos ](https://www.ionos.es/digitalguide/servidores/configuracion/tutorial-docker-instalacion-y-primeros-pasos/)</a>
