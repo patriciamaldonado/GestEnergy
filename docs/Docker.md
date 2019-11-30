@@ -11,11 +11,11 @@ Con Docker podemos crear contenedores para que nuestra aplicación se pueda ejec
 
 ## Dockerfile
 
+Este archivo tendrá las instrucciones necesarias para crear nuestra imagen.
 - **Para empezar tenemos que instalar Docker [[1]](#instadocker)**
-- **Creamos en nuestro repositorio el archivo Dockerfile [[2]](#rdockerfile) [[3]](#rdockerfile2)**
+- **Creamos en la raíz de nuestro repositorio el archivo Dockerfile [[2]](#rdockerfile) [[3]](#rdockerfile2)**
 
   ```
-  #
 
   FROM  python:3.7-slim-buster
 
@@ -37,9 +37,9 @@ Con Docker podemos crear contenedores para que nuestra aplicación se pueda ejec
 
 - **Especificamos la imagen base, es recomendable usar una imagen ligera [[4]](#imagenligera)**
 
-  Se ha elegido la imagen **python:3.7-slim-buster** que  tiene 60 MB cuando se descarga, 179 MB cuando se descomprime en disco, al final mi imagen con los archivos necesarios tiene un tamaño de 188MB.
-
   ```FROM  python:3.7-slim-buster```
+
+    Se ha elegido la imagen **python:3.7-slim-buster** que  tiene 60 MB cuando se descarga, 179 MB cuando se descomprime en disco, al final mi imagen con los archivos necesarios tiene un tamaño de 188MB.
 
     ![tamImagen](images/tamImagen.png)
 
@@ -119,7 +119,12 @@ Para subir nuestra imagen Docker a Dockerhub:
 **1. Creamos una cuenta en [Dockerhub](https://hub.docker.com/)**
 
 **2. Creamos un repositorio que linkearemos con nuestro repositorio de Github. [[8]](#dockerhub)**
- Si lo creamos mediante create and build automáticamente cogerá nuestro Dockerfile del repositorio y subirá la imagen.
+ Si lo creamos mediante create and build automáticamente cogerá nuestro Dockerfile del repositorio y creará la imagen.
+
+   ![APPservices](images/dockerhubconect.png)
+   ![APPservices](images/dockerhub2.png)
+
+Vemos como se ha publicado correctamente nuestra imagen Docker.
 
    ![dockerhub](images/ok.png)
    ![dockerhub](images/builddockerhub.png)
@@ -160,7 +165,7 @@ Descargamos la imagen con el siguiente comando:
   docker tag pmaldonado/gestenergy registry.heroku.com/gestenergy-docker/web
 
   ```
-  **5. Y por último la subimos al registro de heroku[[5]](#dockerheroku).**
+  **5. Y por último la subimos al registro de heroku [[5]](#dockerheroku).**
 
   ```
   docker push registry.heroku.com/<app>/<process-type>
@@ -183,25 +188,25 @@ En la siguiente URL se encuentra nuestra aplicación desplegada:
 
   Otra opción es crear un archivo llamado Heroku.yml para automatizar el proceso de creación del contenedor, para ello crearemos un archivo llamado Heroku.yml [[7]](#herokuyml2) en la raíz de nuestro repositorio.
 
-  - **Éste ejecutará el comando CMD de nuestro Dockerfile.**  ```CMD gunicorn gestenergy.ge_app:app -b 0.0.0.0:${PORT}```
+  - **A continuación vemos el contenido del archivo Heroku.yml. Le decimos a Heroku el Dockerfile que usará para construir la imagen. Ejecutará el comando CMD de nuestro Dockerfile.**  ```CMD gunicorn gestenergy.ge_app:app -b 0.0.0.0:${PORT}```
 
-      ```
+     ```
         build:
 
           docker:
 
             web: Dockerfile
-        ```
+     ```
 
 
-  - **Configuramos como contenedor**
+  - **Configuramos la imagen como contenedor**
 
     ```
     heroku stack:set container
 
     ```
 
-  - **Y por último lo subimos a Heroku**
+  - **Y por último hacemos push hacia Heroku para para construir la imagen y ejecutar el contenedor **
 
     ```
     git push heroku master
