@@ -80,7 +80,7 @@ Puede acceder a la sección deseada desde los siguientes enlaces:
 - [Despliegue Contenedor (Docker)](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/Docker.md)
 
 - [Despliegue en un PaaS (heroku)](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/despliegue_paas.md)
-- [Descripción y funcionamiento de la api](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/api.md)
+- [Descripción y funcionamiento de la API](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/api.md)
 
 - [Herramientas de construcción y prueba e Integración continua](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/CI_test.md)
 - [Descrición de la clase](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/doc_clase.md)
