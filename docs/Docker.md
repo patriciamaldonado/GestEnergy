@@ -34,7 +34,6 @@ Este archivo tendrá las instrucciones necesarias para crear nuestra imagen.
   CMD gunicorn gestenergy.ge_app:app -b 0.0.0.0:${PORT}
 
   ```
-
 - **Especificamos la imagen base, es recomendable usar una imagen ligera [[4]](#imagenligera)**
 
   ```FROM  python:3.7-slim-buster```
