@@ -1,11 +1,12 @@
+---
 - hosts: all
   become: yes
 
   tasks:
 
   - name: Actualizacion (apt-get update)
-    apt: update_cache=yes  
-      upgrade=yes  
+    apt: update_cache=yes
+      upgrade=yes
 
   - name: Instalacion python3
     apt: name=python3-setuptools state=present update_cache=yes
@@ -30,6 +31,3 @@
 
   - name: Instalacion pm2
     command: npm install -g pm2
-
-
-
