@@ -20,10 +20,12 @@ El archivo Vagrantfile es el siguiente:
 ```
 #Versión Vagrant
 Vagrant.configure("2") do |config|
+
 #Indicamos la imagen base
   config.vm.box = "bento/ubuntu-18.04"
-
- # Provisionamiento
+  # Mapeo de puertos
+  config.vm.network "forwarded_port", guest: 5000, host: 5000
+ # Provisionamiento con Ansible
     config.vm.provision "ansible" do |ansible|
 	  ansible.playbook = "playbook.yml"
   end
@@ -32,19 +34,20 @@ end
 ```
  - ```Vagrant.configure("2") do |config|``` indica la versión de Vagrant con la que vamos a trabajar, versión 2, en mi caso tengo la versión 2.2.6.
 
- - ```config.vm.box = "bento/ubuntu-18.04" ``` especificamos la imagen base que tendrá nuestra máquina virtual. La imagen utilizada es bento/ubuntu-18.04, una imagen con ubuntu 18.04 lts elegida por ser una versión reciente y estable.
+ - ```config.vm.box = "bento/ubuntu-18.04" ``` especificamos la imagen base [[6]](#boxes) que tendrá nuestra máquina virtual. La imagen utilizada es bento/ubuntu-18.04, una imagen con ubuntu 18.04 lts elegida por ser una versión reciente y estable.
 
  - Con estas líneas indicamos que vamos a provisionar la máquina mediante Ansible, además de especificar la ubicación de nuestro archivo de provisionamiento (Playbook.yml).
    ```
       config.vm.provision "ansible" do |ansible|
       ansible.playbook = "playbook.yml"
    ```
-
+-  ```config.vm.network "forwarded_port", guest: 5000, host: 5000 ```
+ Permite el acceso al puerto 5000 en el invitado a través del 5000 en el host. Así que cuando ejecutemos nuestra aplicación en nuestra máquina virtual(invitado) podremos acceder desde nuestro host.
 
 
 <a name="playbook"></a>
 ## Ansible Playbook.yml
-Provisionamos mediante Ansible [[3]](#ansible) creando un archivo llamado Playbook.yml, éste contendrá todas las órdenes de instalación con lo necesario para el provisionamiento de nuestra máquina virtual. Como el lenguaje de programación, instalar git, alguna dependencia que no sea estrictamente del lenguaje de programación.
+Provisionamos mediante Ansible [[3]](#ansible) creando un archivo llamado Playbook.yml, éste contendrá todas las órdenes de instalación con lo necesario para el provisionamiento de nuestra máquina virtual. Como el lenguaje de programación, instalar git, alguna dependencia que no sea estrictamente del lenguaje de programación...
 
 Mi archivo Playbook.yml es el siguiente:
 
@@ -84,11 +87,11 @@ Mi archivo Playbook.yml es el siguiente:
     command: npm install -g pm2
 
 ```
-- ```hosts: all```: va a trabajar con todos los hosts
-- ```become: yes```: permisos de superusuario
+- ```hosts: all```: la máquina virtual será accesible desde todos los hosts
+- ```become: yes```: usamos permisos de superusuario para instalar nuestras tareas que se indican a continuación.
 -```tasks:```: indicamos una serie de tareas  que instalarán todo lo necesario en nuestra máquina virtual para la ejecución de nuestra aplicación.
     - Actualizamos
-    - Instalamos python
+    - Instalamos python3
     - Instalación de pip3
     - Clonamos el repositorio con nuestra aplicación
     - Instalamos dependencias necesarias para el funcionamiento de nuestra aplicación.
@@ -98,12 +101,22 @@ Mi archivo Playbook.yml es el siguiente:
 ## Levantar la máquina, provisionar y prueba en local
 
 Una vez que tenemos nuestro archivo Vagrantfile correctamente configurado usaremos el comando ```make levantar-maquina``` que se encargará de levantar la máquina con la
-imagen box de ubuntu 18.04 que le hemos indicado. Además para provisionar la máquina usaremos el comando ```make provision,``` éste instalará lo que hemos especificado en el archivo Playbook.yml de Ansible.
+imagen box de ubuntu 18.04 que le hemos indicado.
+Además para provisionar la máquina usaremos el comando ```make provision,``` éste instalará lo que hemos especificado en el archivo Playbook.yml de Ansible.
 
-Accedemos mediante ```vagrant ssh```. He probado la aplicación de forma local en la máquina virtual.  
+Accedemos a la máquina virtual mediante ```vagrant ssh```.  
+Pruebo mi aplicación lanzando la orden make start que inicia el servicio mediante pm2. Y compruebo desde mi host que puedo acceder al servicio y devuelve el estado correcto.
+
 
 <a name="vagrantcloud"></a>
 ## Vagrant Cloud
+Vamos a exportar nuestra máquina virtual[[5]](#export) y subirla a la nube.
+
+Para ello usamos el comando  ```vagrant package --output gestenergy.box ```que exporta nuestra máquina virtual.
+Creamos una cuenta en Vagrant Cloud y la subimos.
+
+> URL box: https://app.vagrantup.com/patriciamaldonado/boxes/gestenergy/
+
 
 
 ## Referencias
@@ -113,3 +126,7 @@ Accedemos mediante ```vagrant ssh```. He probado la aplicación de forma local e
 - <a name="vagrantfile"> [[3] Vagrantfile](https://www.vagrantup.com/docs/vagrantfile/)</a>
 
 - <a name="ansible"> [[4] Ansible](https://docs.ansible.com/ansible/latest/index.html/)</a>
+
+- <a name="export"> [[5] Exportar Package Vagrant](https://www.vagrantup.com/docs/cli/package.html)</a>
+
+- <a name="boxes"> [[6] Vagrant boxes](https://www.vagrantup.com/docs/boxes.html)</a>
