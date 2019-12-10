@@ -67,15 +67,16 @@ Contenedor: https://gestenergy-docker.herokuapp.com/
 
 Contenedor: https://gestenergy.azurewebsites.net/
 
-# Dockerhub
+## Dockerhub
 
 Dockerhub: https://hub.docker.com/r/pmaldonado/gestenergy
 
-# provisionamiento
+## Provisionamiento
 
 provision: provision/playbook.yml
 
 ## Documentación
+
 Para documentación adicional vaya al siguiente enlace:
  - [Documentación adicional](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
 
