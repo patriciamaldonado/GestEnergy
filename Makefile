@@ -31,3 +31,11 @@ delete: #eliminamos el servicio de la lista de procesos
 
 show: #Obtenemos más detalles sobre nuestro proceso
 	pm2 show api
+
+levantar-maquina: #Levantamos la máquina vagrant
+	vagrant up --no-provision
+
+provision: #Provisionamos la máquina
+	vagrant provision
+
+
