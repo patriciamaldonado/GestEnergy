@@ -71,11 +71,16 @@ Contenedor: https://gestenergy.azurewebsites.net/
 
 Dockerhub: https://hub.docker.com/r/pmaldonado/gestenergy
 
+# provisionamiento
+
+provision: provision/playbook.yml
+
 ## Documentación
 Para documentación adicional vaya al siguiente enlace:
  - [Documentación adicional](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
 
 Puede acceder a la sección deseada desde los siguientes enlaces:
+- [Provisionamiento de máquinas virtuales](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/provisionamiento.md)
 
 - [Despliegue Contenedor (Docker)](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/Docker.md)
 
