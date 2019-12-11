@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
 end
 
 ```
- - ```Vagrant.configure("2") do |config|``` indica la versión de Vagrant con la que vamos a trabajar, versión 2, en mi caso tengo la versión 2.2.6.
+ - ```Vagrant.configure("2") do |config|``` indica la versión del objeto de Vagrant con la que vamos a trabajar, versión 2, en mi caso tengo la versión 2.2.6.
 
  - ```config.vm.box = "bento/ubuntu-18.04" ``` especificamos la imagen base [[6]](#boxes) que tendrá nuestra máquina virtual. La imagen utilizada es bento/ubuntu-18.04, una imagen con ubuntu 18.04 lts elegida por ser una versión reciente y estable.
 
@@ -63,13 +63,13 @@ Mi archivo Playbook.yml es el siguiente:
       upgrade=yes  
 
   - name: Instalacion python3
-    apt: name=python3-setuptools state=present update_cache=yes
+    apt: name=python3-setuptools state=present
 
   - name: Instalacion pip3
-    apt:  name=python3-pip state=present update_cache=yes
+    apt:  name=python3-pip state=present
 
   - name: Instalacion git
-    apt: name=git state=present update_cache=true
+    apt: name=git state=present
 
   - name: Clono repositorio GestEnergy
     git:  repo=https://github.com/patriciamaldonado/GestEnergy.git clone=yes force=yes dest=GestEnergy/
@@ -78,24 +78,72 @@ Mi archivo Playbook.yml es el siguiente:
     command: pip3 install -r GestEnergy/requirements.txt
 
   - name: Instalacion nodejs
-    apt: name=nodejs state=present update_cache=true
+    apt: name=nodejs state=present
 
   - name: Instalacion npm
-    apt: name=npm state=present update_cache=true
+    apt: name=npm state=present
 
   - name: Instalacion pm2
     command: npm install -g pm2
 
 ```
-- ```hosts: all```: la máquina virtual será accesible desde todos los hosts
+- ```hosts: all```: la máquina virtual será accesible desde todos los hosts.
 - ```become: yes```: usamos permisos de superusuario para instalar nuestras tareas que se indican a continuación.
 -```tasks:```: indicamos una serie de tareas  que instalarán todo lo necesario en nuestra máquina virtual para la ejecución de nuestra aplicación.
-    - Actualizamos
-    - Instalamos python3
-    - Instalación de pip3
-    - Clonamos el repositorio con nuestra aplicación
-    - Instalamos dependencias necesarias para el funcionamiento de nuestra aplicación.
+
+    - Actualizamos para que la máquina conozca los paquetes disponibles.
+
+      ```
+      - name: Actualizacion (apt-get update)
+        apt: update_cache=yes  
+          upgrade=yes
+      ```
+    - Instalamos python3, el lenguaje de nuestro microservicio.
+
+      ```
+      - name: Instalacion python3
+        apt: name=python3-setuptools state=present update_cache=yes
+
+      ```
+    - Instalación de pip3 para instalar dependencias.
+
+      ```
+      - name: Instalacion pip3
+        apt:  name=python3-pip state=present update_cache=yes
+
+      ```
+    - Instalación de git para posteriormente poder clonar el repositorio de nuestro microservicio.
+      ```
+      - name: Instalacion git
+        apt: name=git state=present update_cache=yes
+      ```
+    - Clonamos el repositorio, GestEnergy
+      ```
+      - name: Clono repositorio GestEnergy
+        git:  repo=https://github.com/patriciamaldonado/GestEnergy.git clone=yes force=yes dest=GestEnergy/
+      ```
+    - Instalamos dependencias definifidas en el archivo requirements.txt, gunicorn y flask necesarias para el funcionamiento de nuestra aplicación.
+      ```
+      - name: Instalacion dependencias
+        command: pip3 install -r GestEnergy/requirements.txt
+
+      ```
     - Además instalamos nodejs, npm y pm2 para poder lanzar el servicio.
+
+      ```
+      - name: Instalacion nodejs
+        apt: name=nodejs state=present update_cache=yes
+
+      - name: Instalacion npm
+        apt: name=npm state=present update_cache=yes
+
+      - name: Instalacion pm2
+        command: npm install -g pm2
+
+      ```
+Notas:
+- state=present: comprueba si está instalado, si no lo instala.
+- update_cache=yes: equivale a apt-get update. Se puede ejecutar como parte de la instalación del paquete o como un paso separado.
 
 <a name="pruebalocal"></a>
 ## Levantar la máquina, provisionar y prueba en local
