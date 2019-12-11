@@ -173,7 +173,7 @@ Creamos una cuenta en Vagrant Cloud y la subimos.
 - <a name="vagrantComandos"> [[2] Vagrant comandos](https://medium.com/@joaquin.villagra/vagrant-entornos-de-trabajo-independientes-replicables-y-elegantes-e49597eeeb65)</a>
 - <a name="vagrantfile"> [[3] Vagrantfile](https://www.vagrantup.com/docs/vagrantfile/)</a>
 
-- <a name="ansible"> [[4] Ansible](https://docs.ansible.com/ansible/latest/index.html/)</a>
+- <a name="ansible"> [[4] Ansible](https://docs.ansible.com/ansible/latest/index.html)</a>
 
 - <a name="export"> [[5] Exportar Package Vagrant](https://www.vagrantup.com/docs/cli/package.html)</a>
 
