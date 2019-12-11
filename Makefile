@@ -1,4 +1,4 @@
-.PHONY: install tests tests_api start-heroku start stop restart delete show
+.PHONY: install tests tests_api start-heroku start stop restart delete show levantar-maquina provision
 #revisado
 install: #instalamos dependencias
 	pip3 install nose
