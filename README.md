@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/patriciamaldonado/GestEnergy.svg?branch=master)](https://travis-ci.com/patriciamaldonado/GestEnergy)
+
 # GestEnergy (Gestión empresa Energia)
 
 ## Descripción
@@ -77,9 +78,6 @@ provision: provision/playbook.yml
 
 ## Documentación
 
-Para documentación adicional vaya al siguiente enlace:
- - [Documentación adicional](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
-
 Puede acceder a la sección deseada desde los siguientes enlaces:
 - [Provisionamiento de máquinas virtuales](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/provisionamiento.md)
 
@@ -90,3 +88,6 @@ Puede acceder a la sección deseada desde los siguientes enlaces:
 
 - [Herramientas de construcción y prueba e Integración continua](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/CI_test.md)
 - [Descrición de la clase](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/doc_clase.md)
+
+Para documentación adicional vaya al siguiente enlace:
+ - [Documentación adicional](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/documentacion.md)
