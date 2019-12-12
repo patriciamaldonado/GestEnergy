@@ -23,11 +23,11 @@ Vagrant.configure("2") do |config|
 
 #Indicamos la imagen base
   config.vm.box = "bento/ubuntu-18.04"
-  # Mapeo de puertos
+#Mapeamos el puerto
   config.vm.network "forwarded_port", guest: 5000, host: 5000
  # Provisionamiento con Ansible
     config.vm.provision "ansible" do |ansible|
-	  ansible.playbook = "playbook.yml"
+	  ansible.playbook = "provision/playbook.yml"
   end
 end
 
@@ -39,7 +39,7 @@ end
  - Con estas líneas indicamos que vamos a provisionar la máquina mediante Ansible, además de especificar la ubicación de nuestro archivo de provisionamiento (Playbook.yml).
    ```
       config.vm.provision "ansible" do |ansible|
-      ansible.playbook = "playbook.yml"
+      ansible.playbook = "provision/playbook.yml"
    ```
 -  ```config.vm.network "forwarded_port", guest: 5000, host: 5000 ```
  Permite el acceso al puerto 5000 en el invitado a través del 5000 en el host. Así que cuando ejecutemos nuestra aplicación en nuestra máquina virtual(invitado) podremos acceder desde nuestro host.
