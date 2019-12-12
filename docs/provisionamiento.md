@@ -89,7 +89,7 @@ Mi archivo Playbook.yml es el siguiente:
 ```
 - ```hosts: all```: la máquina virtual será accesible desde todos los hosts.
 - ```become: yes```: usamos permisos de superusuario para instalar nuestras tareas que se indican a continuación.
--```tasks:```: indicamos una serie de tareas  que instalarán todo lo necesario en nuestra máquina virtual para la ejecución de nuestra aplicación.
+- ```tasks:```: indicamos una serie de tareas  que instalarán todo lo necesario en nuestra máquina virtual para la ejecución de nuestra aplicación.
 
     - Actualizamos para que la máquina conozca los paquetes disponibles.
 
@@ -102,20 +102,20 @@ Mi archivo Playbook.yml es el siguiente:
 
       ```
       - name: Instalacion python3
-        apt: name=python3-setuptools state=present update_cache=yes
+        apt: name=python3-setuptools state=present
 
       ```
     - Instalación de pip3 para instalar dependencias.
 
       ```
       - name: Instalacion pip3
-        apt:  name=python3-pip state=present update_cache=yes
+        apt:  name=python3-pip state=present
 
       ```
     - Instalación de git para posteriormente poder clonar el repositorio de nuestro microservicio.
       ```
       - name: Instalacion git
-        apt: name=git state=present update_cache=yes
+        apt: name=git state=present
       ```
     - Clonamos el repositorio, GestEnergy
       ```
@@ -132,10 +132,10 @@ Mi archivo Playbook.yml es el siguiente:
 
       ```
       - name: Instalacion nodejs
-        apt: name=nodejs state=present update_cache=yes
+        apt: name=nodejs state=present
 
       - name: Instalacion npm
-        apt: name=npm state=present update_cache=yes
+        apt: name=npm state=present
 
       - name: Instalacion pm2
         command: npm install -g pm2
