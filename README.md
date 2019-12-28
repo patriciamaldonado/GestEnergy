@@ -78,7 +78,7 @@ provision: provision/playbook.yml
 
 ## Despliegue Final VM Azure
 
-Despliegue final: http://40.68.146.104:5000
+Despliegue final: 40.68.146.104:5000
 
 ## Documentación
 
