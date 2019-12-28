@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
     azure.vm_name = 'gestenergy-azure'
     azure.resource_group_name = 'gestenergy-azure'
     azure.location = 'westeurope'
-    azure.vm_size = 'Standard_B1s'
+    azure.vm_size = 'Standard_B1ms' 	
     azure.tcp_endpoints = '5000'
     azure.vm_image_urn = 'Canonical:UbuntuServer:18.04-LTS:latest'
   end
