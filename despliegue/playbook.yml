@@ -1,0 +1,40 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+
+  - name: Actualizacion (apt-get update)
+    apt: update_cache=yes
+      upgrade=yes
+
+  - name: Instalacion python3
+    apt: name=python3-setuptools state=present
+
+  - name: Instalacion pip3
+    apt:  name=python3-pip state=present
+
+  - name: Instalacion git
+    apt: name=git state=present
+
+  - name: Clono repositorio GestEnergy
+    git:  repo=https://github.com/patriciamaldonado/GestEnergy.git clone=yes force=yes dest=GestEnergy/
+
+  - name: Instalacion dependencias
+    command: pip3 install -r GestEnergy/requirements.txt
+
+  - name: Instalacion nodejs
+    apt: name=nodejs state=present
+
+  - name: Instalacion npm
+    apt: name=npm state=present
+
+  - name: Instalacion pm2
+    command: npm install -g pm2
+
+  - name: Inicia app
+    make:
+           chdir: /home/vagrant/GestEnergy
+           file: /home/vagrant/GestEnergy/Makefile
+           target: start
+
