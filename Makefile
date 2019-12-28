@@ -1,4 +1,4 @@
-.PHONY: install tests tests_api start-heroku start stop restart delete show levantar-maquina provision
+.PHONY: install tests tests_api start-heroku start stop restart delete show levantar-maquina provision fulldeployment
 #revisado
 install: #instalamos dependencias
 	pip3 install nose
@@ -38,4 +38,6 @@ levantar-maquina: #Levantamos la máquina vagrant
 provision: #Provisionamos la máquina
 	vagrant provision
 
+fulldeployment: #Despliegue VM y provisionamiento
+	vagrant up
 
