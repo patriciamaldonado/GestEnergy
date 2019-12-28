@@ -76,9 +76,16 @@ Dockerhub: https://hub.docker.com/r/pmaldonado/gestenergy
 
 provision: provision/playbook.yml
 
+## Despliegue Final VM Azure
+
+Despliegue final: http://40.68.146.104:5000
+
 ## Documentación
 
 Puede acceder a la sección deseada desde los siguientes enlaces:
+
+- [Despliegue Final Azure](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/despliegueFinal_Azure.md)
+
 - [Provisionamiento de máquinas virtuales](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/provisionamiento.md)
 
 - [Despliegue Contenedor (Docker)](https://github.com/patriciamaldonado/GestEnergy/blob/master/docs/Docker.md)
