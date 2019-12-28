@@ -47,6 +47,7 @@ end
 
 <a name="playbook"></a>
 ## Ansible Playbook.yml
+
 Provisionamos mediante Ansible [[3]](#ansible) creando un archivo llamado Playbook.yml, éste contendrá todas las órdenes de instalación con lo necesario para el provisionamiento de nuestra máquina virtual. Como el lenguaje de programación, instalar git, alguna dependencia que no sea estrictamente del lenguaje de programación...
 
 Mi archivo Playbook.yml es el siguiente:
@@ -59,8 +60,8 @@ Mi archivo Playbook.yml es el siguiente:
   tasks:
 
   - name: Actualizacion (apt-get update)
-    apt: update_cache=yes  
-      upgrade=yes  
+    apt: update_cache=yes 
+      upgrade=yes
 
   - name: Instalacion python3
     apt: name=python3-setuptools state=present
