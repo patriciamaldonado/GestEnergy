@@ -129,7 +129,7 @@ He elegido ```Canonical:UbuntuServer:18.04-LTS:latest'``` por ser una versión r
 
 <a name="playbook"></a>
 ## Ansible Playbook.yml
-Provisionamos mediante Ansible creando un archivo llamado Playbook.yml, éste contendrá todas las órdenes de instalación con lo necesario para el provisionamiento de nuestra máquina virtual. Como el lenguaje de programación, instalar git, alguna dependencia que no sea estrictamente del lenguaje de programación...
+Provisionamos mediante Ansible creando un archivo llamado Playbook.yml, este contendrá todas las órdenes de instalación con lo necesario para el provisionamiento de nuestra máquina virtual. Como el lenguaje de programación, instalar git, alguna dependencia que no sea estrictamente del lenguaje de programación...
 Para el despliegue en Azure además de esto es necesario tener instalado git, clonar el repositorio y ejecutar la aplicación.
 
 Mi archivo Playbook.yml es el siguiente:
@@ -231,7 +231,7 @@ Mi archivo Playbook.yml es el siguiente:
         command: npm install -g pm2
 
       ```
-    - Ejecución de la aplicación. Se ejecutará mediante la orden creada en el Makefile con el target start, esta orden ejecuta la aplicación a través del gestor de procesos pm2 con gunicorn ```pm2 start 'gunicorn gestenergy.ge_app:app -b 0000:5000 -w 2' --name "api"```.
+    - Ejecución de la aplicación. Se ejecutará mediante la orden creada en el Makefile con el target start, esta orden ejecuta la aplicación a través del gestor de procesos pm2 con gunicorn.
 
       ```
         - name: Inicia aplicación
@@ -245,6 +245,7 @@ Notas:
 - state=present: comprueba si está instalado, si no lo instala.
 - update_cache=yes: equivale a apt-get update. Se puede ejecutar como parte de la instalación del paquete o como un paso separado.
 <a name="despliegue"></a>
+
 ## Despliegue VM en Azure
 Una vez que esté todo correctamente configurado se desplegará nuestra VM en Azure, para ello
 se ha creado en el Makefile una orden llamada make fulldeployment que levantará la máquina virtual
