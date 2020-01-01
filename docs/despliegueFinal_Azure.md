@@ -55,7 +55,7 @@ Configurarmos Azure para posteriormente desplegar e instalamos el CLI y el plugi
     ```
 <a name="vagrantfile"></a>
 ## Vagrantfile
-  Éste es el archivo de configuración de Vagrant, en el que vamos a especificar todo lo necesario
+  Este es el archivo de configuración de Vagrant, en el que vamos a especificar todo lo necesario
   para el despliegue de Azure y su provisionamiento. [[4]](#vagrantfileAzure)[[2]](#confvagrantfile)
 
 ```
@@ -114,7 +114,7 @@ end
 - ```azure.resource_group_name = 'gestenergy-azure''``` Nombre del grupo de recursos que va a utilizar.
 - ```azure.location = 'westeurope' ``` Ubicación de Azure para compilar la VM
 
-- ```azure.vm_size = 'Standard_B1ms'``` Indica el tamaño elegido de la máquina virtual, es una máquina serie B idea para cargas de trabajo que no necesitan un rendimiento completo de la CPU de forma continua, como es el caso de mi aplicación. Además se ha elegido esta por ser una de las más baratas con un costo estimado de 15,06 €/mes, cuenta con 2GiB de RAM, 1 CPU y 4 GiB de almacenamiento [[5]](#azuremaquinas)
+- ```azure.vm_size = 'Standard_B1ms'``` Indica el tamaño elegido de la máquina virtual, es una máquina serie B ideal para cargas de trabajo que no necesitan un rendimiento completo de la CPU de forma continua, como es el caso de mi aplicación. Además se ha elegido esta por ser una de las más baratas con un costo estimado de 15,06 €/mes, cuenta con 2GiB de RAM, 1 CPU y 4 GiB de almacenamiento [[5]](#azuremaquinas)
 
 - ```azure.tcp_endpoints = '5000'``` Abrimos el puerto 5000 necesario para poder acceder a la aplicación.
 
@@ -231,7 +231,7 @@ Mi archivo Playbook.yml es el siguiente:
         command: npm install -g pm2
 
       ```
-    - Ejecución de la aplicación
+    - Ejecución de la aplicación. Se ejecutará mediante la orden creada en el Makefile con el target start, esta orden ejecuta la aplicación a través del gestor de procesos pm2 con gunicorn ```pm2 start 'gunicorn gestenergy.ge_app:app -b 0000:5000 -w 2' --name "api"```.
 
       ```
         - name: Inicia aplicación
@@ -247,7 +247,7 @@ Notas:
 <a name="despliegue"></a>
 ## Despliegue VM en Azure
 Una vez que esté todo correctamente configurado se desplegará nuestra VM en Azure, para ello
-se ha creado en el Makefile una orden llamada make fulldeployment que levantará la máquina virtuales
+se ha creado en el Makefile una orden llamada make fulldeployment que levantará la máquina virtual
 y la provisionará.
 Podemos consultar la ip pública donde se ha desplegado nuestra VM desde la Web de Azure.
 
